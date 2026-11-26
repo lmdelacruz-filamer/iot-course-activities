@@ -236,11 +236,11 @@ def main():
             if orb_held:
                 orb_pos[0], orb_pos[1] = index_tip_px 
 
-        # orb_color = ORB_GLOW_COLOR if orb_held else ORB_COLOR
-        # pulse = int(6 * math.sin(time.time() * 4)) if not orb_held else 0
-        # glow_circle(overlay_layer, tuple(orb_pos), ORB_RADIUS + pulse, ORB_COLOR, orb_color)
-        # draw_text_with_bg(overlay_layer, "touch me", (orb_pos[0] - 45, orb_pos[1] - ORB_RADIUS -16),
-        #                scale=0.55, color=(255, 255, 255), bg=(0, 0, 0), alpha=0.4)
+        orb_color = ORB_GLOW_COLOR if orb_held else ORB_COLOR
+        pulse = int(6 * math.sin(time.time() * 4)) if not orb_held else 0
+        glow_circle(overlay_layer, tuple(orb_pos), ORB_RADIUS + pulse, ORB_COLOR, orb_color)
+        draw_text_with_bg(overlay_layer, "touch me", (orb_pos[0] - 45, orb_pos[1] - ORB_RADIUS -16),
+                       scale=0.55, color=(255, 255, 255), bg=(0, 0, 0), alpha=0.4)
       
         # Composite glow layer onto camera frame with addictive belnding for neon feel.
         overlay_layer = np.maximum(overlay_layer, brush_canvas)
