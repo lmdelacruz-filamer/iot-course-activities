@@ -1,0 +1,10 @@
+# Secrets: keep them in .env, which git never uploads
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# Local Python files
+.venv/
+__pycache__/
